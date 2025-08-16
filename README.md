@@ -1,3 +1,4 @@
+![sshepard_logo](sshepard_logo.png)
 
 # SSHepard 🐑 Lightweight SSH Cluster Registrar
 
