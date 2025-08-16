@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSHepard 🐑 Lightweight SSH Cluster Registrar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #222;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 15px auto;
+        }
+        code, pre {
+            background: #f3f4f6;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            padding: 10px;
+            overflow-x: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin: 6px 0;
+        }
+        sup {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SSHepard 🐑 Lightweight SSH Cluster Registrar</h1>
+    <img src="sshepard_logo.png" alt="SSHepard Logo">
+
+    <h2>⚡ Features</h2>
+    <ul>
+        <li>🐺 Minimal dependencies: Bash + OpenSSH + netcat</li>
+        <li>🔑 Passwordless SSH setup automatically</li>
+        <li>📄 Logs all nodes in <code>cluster_nodes.txt</code></li>
+        <li>🛡️ Adds node ED25519 keys to <code>known_hosts</code></li>
+        <li>⏱️ Duplicate detection & rate-limiting</li>
+        <li>💡 Lightweight, DIY cluster registration</li>
+    </ul>
+
+    <h2>🔧 How to Use</h2>
+    <ol>
+        <li>
+            Clone the repo:
+            <pre><code>git clone &lt;repo_url&gt;
+cd SSHepard</code></pre>
+        </li>
+        <li>
+            Run the master on your main node:
+            <pre><code>bash sshepard.sh</code></pre>
+        </li>
+        <li>
+            Copy the generated join command and run it on any machine/node you want to add to the cluster.
+        </li>
+    </ol>
+
+    <img src="sshepard_output.png" alt="SSHepard Output">
+
+    <div class="divider"></div>
+    <sup>“Guide your cluster like a shepherd guides their flock.” ✨</sup>
+
+</body>
+</html>
+
