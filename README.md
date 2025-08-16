@@ -1,5 +1,5 @@
 
-# SSHepard 🐑 Lightweight SSH Cluster Registrar
+# 🐑 SSHepard - Lightweight SSH Cluster Registrar
 <p align="center">
 
 <img src="sshepard_logo.png" alt="drawing" width="400" />
