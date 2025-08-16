@@ -1,8 +1,10 @@
 
-
 # SSHepard 🐑 Lightweight SSH Cluster Registrar
+<p align="center">
 
-![sshepard_logo](sshepard_logo.png)
+<img src="sshepard_logo.png" alt="drawing" width="400" />
+
+</p>
 
 ## ⚡ Features
 
