@@ -17,7 +17,7 @@
 
 1. Clone the repo:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/prim4t/SSHepard.git
    cd SSHepard
 2. Run the master on your main node:
 
