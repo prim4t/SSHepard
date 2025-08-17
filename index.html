@@ -21,6 +21,12 @@
             display: block;
             margin: 15px auto;
         }
+        p.description {
+            text-align: center;
+            color: #aaa;
+            margin-top: 10px;
+            font-size: 18px;
+        }
         code, pre {
             background: #222526;
             color: #f8f8f2;
@@ -31,16 +37,6 @@
         pre {
             padding: 10px;
             overflow-x: auto;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul li {
-            margin: 6px 0;
-        }
-        ol li {
-            margin: 12px 0;
         }
         sup {
             display: block;
@@ -67,7 +63,6 @@
             gap: 15px;
             margin: 20px 0;
         }
-
         .buttons a {
             flex: 1;
             display: inline-block;
@@ -82,17 +77,59 @@
             text-decoration: none;
             transition: all 0.2s ease-in-out;
         }
-
         .buttons a:hover {
             background-color: #00ff05;
             color: #111;
             box-shadow: 0 0 6px #00ff05, 0 0 10px #00ff05;
         }
+
+        /* Terminal command snippet */
+        .terminal-command-wrapper {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .terminal-command-wrapper p {
+            color: #aaa;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .terminal-command {
+            background: #111;
+            border: 2px dashed #00ff05;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 18px;
+            color: #00ff05;
+            text-align: center;
+            cursor: copy;
+            transition: all 0.2s ease-in-out;
+        }
+        .terminal-command:hover {
+            border: 2px solid #00ff05;
+        }
+
+        /* Short description under buttons */
+        .script-description {
+            text-align: center;
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
 
+
     <img src="sshepard_logo.png" alt="SSHepard Logo">
+
+    <!-- Terminal command opt-in -->
+    <div class="terminal-command-wrapper">
+        <p>Just copy this:</p>
+        <div class="terminal-command">
+            bash -c "$(curl -fsSL https://sshepard.com/sshepard.sh)"
+        </div>
+    </div>
 
     <!-- Buttons -->
     <div class="buttons">
@@ -100,33 +137,11 @@
         <a href="https://github.com/prim4t/SSHepard" target="_blank">🐙 GitHub</a>
     </div>
 
-    <h2>⚡ Features</h2>
-    <ul>
-        <li>🐺 Minimal dependencies: Bash + OpenSSH + netcat</li>
-        <li>🔑 Passwordless SSH setup automatically</li>
-        <li>📄 Logs all nodes in <code>cluster_nodes.txt</code></li>
-        <li>🛡️ Adds node ED25519 keys to <code>known_hosts</code></li>
-        <li>⏱️ Duplicate detection & rate-limiting</li>
-        <li>💡 Lightweight, DIY cluster registration</li>
-    </ul>
+    <!-- Short description under buttons -->
+    <p class="script-description">
+        SSHepard automatically registers nodes to your SSH cluster, sets up passwordless SSH, and keeps track of all nodes in <code>cluster_nodes.txt</code>.
+    </p>
 
-    <h2>🔧 How to Use</h2>
-    <ol>
-        <li>
-            Clone the repo:
-            <pre><code>git clone https://github.com/prim4t/SSHepard.git</code></pre>
-            <pre><code>cd SSHepard</code></pre>
-        </li>
-        <li>
-            Run the master on your main node:
-            <pre><code>bash sshepard.sh</code></pre>
-        </li>
-        <li>
-            Copy the generated join command and run it on any machine/node you want to add to the cluster.
-        </li>
-    </ol>
-
-    <img src="sshepard_output.png" alt="SSHepard Output">
 
     <div class="divider"></div>
     <sup>“Guide your cluster like a shepherd guides their flock.” ✨</sup>
