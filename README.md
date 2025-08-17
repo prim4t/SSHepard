@@ -31,7 +31,7 @@
 
 ## 🖥 Demo
 
-[![asciicast](https://asciinema.org/a/734071.svg)](https://asciinema.org/a/734071)
+<a href="https://asciinema.org/a/734071" target="_blank"><img width="400" src="https://asciinema.org/a/734071.svg" /></a>
 
 ---
 
