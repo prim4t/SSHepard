@@ -125,8 +125,13 @@
 
     <!-- Terminal command opt-in -->
     <div class="terminal-command-wrapper">
-        <p>Just copy this:</p>
-        <div class="terminal-command">
+    <p class="script-description">
+        Manage your SSH flock with a single command.
+    </p>
+
+    <div class="divider"></div>
+
+        <div class="terminal-command" id="copyText">
             bash -c "$(curl -fsSL https://sshepard.com/sshepard.sh)"
         </div>
     </div>
@@ -137,14 +142,54 @@
         <a href="https://github.com/prim4t/SSHepard" target="_blank">🐙 GitHub</a>
     </div>
 
-    <!-- Short description under buttons -->
-    <p class="script-description">
-        SSHepard automatically registers nodes to your SSH cluster, sets up passwordless SSH, and keeps track of all nodes in <code>cluster_nodes.txt</code>.
-    </p>
 
 
-    <div class="divider"></div>
-    <sup>“Guide your cluster like a shepherd guides their flock.” ✨</sup>
+
+
+
+
+
+<script>
+document.getElementById('copyText').addEventListener('click', async function(event) {
+  const textToCopy = this.textContent.trim(); // remove leading/trailing whitespace
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.textContent = '✅ Copied!';
+    notification.style.position = 'absolute';
+    notification.style.backgroundColor = '#00ff05';
+    notification.style.color = '#111';
+    notification.style.padding = '5px 10px';
+    notification.style.borderRadius = '6px';
+    notification.style.fontWeight = 'bold';
+    notification.style.boxShadow = '0 0 8px #00ff05';
+    notification.style.zIndex = '1000';
+    notification.style.transition = 'opacity 0.5s ease';
+    notification.style.opacity = '1';
+
+    // Position near the mouse cursor
+    const offsetX = 10; // slight offset so it doesn’t overlap the cursor
+    const offsetY = 10;
+    notification.style.left = (event.pageX + offsetX) + 'px';
+    notification.style.top = (event.pageY + offsetY) + 'px';
+
+    document.body.appendChild(notification);
+
+    // Fade out and remove after 1.5 seconds
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      setTimeout(() => document.body.removeChild(notification), 500);
+    }, 1500);
+
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+  }
+});
+</script>
+
+
 
 </body>
 </html>
