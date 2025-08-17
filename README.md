@@ -27,7 +27,7 @@
       bash sshepard.sh
 3. Copy the generated join command and run it on any machine/node you want to add to the cluster.
 
-![sshepard_output](sshepard_output.png)
+<img src="sshepard_output.png" alt="drawing" width="400" />
 
 ## 🖥 Demo
 
