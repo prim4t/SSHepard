@@ -29,6 +29,10 @@
 
 ![sshepard_output](sshepard_output.png)
 
+## 🖥 Demo
+
+[![asciicast](https://asciinema.org/a/734071.svg)](https://asciinema.org/a/734071)
+
 ---
 
 
