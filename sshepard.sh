@@ -46,7 +46,7 @@ MASTER_PUBKEY=$(cat "${SSH_KEY}.pub")
 MASTER_IP=$(hostname -I | awk '{print $1}')
 
 # Output ready-to-use join command for nodes
-JOIN_CMD="mkdir -p ~/.ssh && chmod 700 ~/.ssh && AUTH=~/.ssh/authorized_keys && grep -qxF \"$MASTER_PUBKEY\" \"\$AUTH\" 2>/dev/null || echo \"$MASTER_PUBKEY\" >> \"\$AUTH\" && chmod 600 \"\$AUTH\" && echo \"\$(hostname -f) \$(hostname -I | awk '{print \$1}')\" | nc -q 0 $MASTER_IP $PORT"
+JOIN_CMD="mkdir -p ~/.ssh && chmod 700 ~/.ssh && AUTH=~/.ssh/authorized_keys && grep -qxF \"$MASTER_PUBKEY\" \"\$AUTH\" 2>/dev/null || echo \"$MASTER_PUBKEY\" >> \"\$AUTH\" && chmod 600 \"\$AUTH\" && echo \"\$(whoami) \$(hostname -I | awk '{print \$1}')\" | nc -q 0 $MASTER_IP $PORT"
 echo "=== COPY THIS COMMAND TO A NODE TO JOIN THE CLUSTER ==="
 echo "$JOIN_CMD"
 echo "======================================================"
@@ -75,7 +75,7 @@ while true; do
 
     # Add to log if new
     if ! grep -q "^$HOST@$IP\$" "$LOGFILE" 2>/dev/null; then
-        echo "$HOST $IP" >> "$LOGFILE"
+        echo "$HOST@$IP" >> "$LOGFILE"
         echo "New node registered: $HOST $IP"
         # Add ED25519 key only to known_hosts
         if ! ssh-keygen -F "$IP" -f "$KNOWN_HOSTS" >/dev/null 2>&1; then
